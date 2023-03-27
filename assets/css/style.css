@@ -1,0 +1,81 @@
+/* header */
+header {
+    display: flex;
+    justify-content: center;
+}
+header button {
+    margin: 0 1rem;
+    font-size: 1rem;
+    padding: .5rem;
+}
+.basic {
+    background-color: green;
+}
+.scientific {
+    background-color: yellow;
+}
+.graphic {
+    background-color: red;
+}
+/* header end */
+/* basic calculator */
+.calculator {
+    border: .2rem black solid;
+    width: 300px;
+    margin: 2rem auto;
+}
+.screen {
+    width: 100%;
+    margin: 0 auto;
+    color: white;
+    background-color: darkslategrey;
+    text-align: right;
+    font-size: 3rem;
+}
+#ac {grid-area: ac;}
+#plus-minus {grid-area: plus-minus;}
+#percentage {grid-area: percentage;}
+#divide {grid-area: divide;}
+#seven {grid-area: seven;}
+#eight {grid-area: eight;}
+#nine {grid-area: nine;}
+#multiply {grid-area: multiply;}
+#four {grid-area: four;}
+#five {grid-area: five;}
+#six {grid-area: six;}
+#minus {grid-area: minus;}
+#one {grid-area: one;}
+#two {grid-area: two;}
+#three {grid-area: three;}
+#plus {grid-area: plus;}
+#zero {grid-area: zero;}
+#decimal {grid-area: decimal;}
+#equal {grid-area: equal;}
+.output {
+    margin-right: 1.5rem;
+}
+.basic-calculator .button-pad {
+    display: grid;
+    grid-template-areas: 
+    'ac plus-minus percentage divide'
+    'seven eight nine multiply'
+    'four five six minus'
+    'one two three plus'
+    'zero zero decimal equal';
+}
+.button-pad button {
+    font-size: 2rem;
+    padding: .5rem 0;
+}
+.top-line {
+    background-color: darkgrey;
+    color: white;
+}
+.operator {
+    background-color: greenyellow;
+}
+.number {
+    background-color: grey;
+    color: white;
+}
+/* basic calculator end */
