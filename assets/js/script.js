@@ -37,10 +37,146 @@ graphicEl.addEventListener('click', function handleClick(event) {
     window.alert("not yet ready for prime time")
 })
 
-//check buttons
+
+
+// functions
+//push number to array
+var a = [];
+var pushNumber = function() {
+    a.push(i);
+    console.log(a);
+};
+
+//display number
+var displayNumber = function() {
+    var b = a.join('');
+    b = b.replace(/^0+/, '');
+    if (b === "") {
+        b = "0";
+    };
+    outputEl.textContent = b;
+    console.log(a);
+}
+
+// number buttons
+zeroEl.addEventListener('click', function handleClick(event) {
+    event
+    i="0";
+    pushNumber();
+    displayNumber();
+    console.log(i);
+})
+oneEl.addEventListener('click', function handleClick(event) {
+    event
+    i="1";
+    pushNumber();
+    displayNumber();
+    console.log(i);
+})
+twoEl.addEventListener('click', function handleClick(event) {
+    event
+    i="2";
+    pushNumber();
+    displayNumber();
+    console.log(i);
+})
+threeEl.addEventListener('click', function handleClick(event) {
+    event
+    i="3";
+    pushNumber();
+    displayNumber();
+    console.log(i);
+})
+fourEl.addEventListener('click', function handleClick(event) {
+    event
+    i="4";
+    pushNumber();
+    displayNumber();
+    console.log(i);
+
+})
+fiveEl.addEventListener('click', function handleClick(event) {
+    event
+    i="5";
+    pushNumber();
+    displayNumber();
+    console.log(i);
+})
+sixEl.addEventListener('click', function handleClick(event) {
+    event
+    i="6";
+    pushNumber();
+    displayNumber();
+    console.log(i);
+})
+sevenEl.addEventListener('click', function handleClick(event) {
+    event
+    i="7";
+    pushNumber();
+    displayNumber();
+    console.log(i);
+})
+eightEl.addEventListener('click', function handleClick(event) {
+    event
+    i="8";
+    pushNumber();
+    displayNumber();
+    console.log(i)
+})
+nineEl.addEventListener('click', function handleClick(event) {
+    event
+    i="9";
+    pushNumber();
+    displayNumber();
+    console.log(i)
+})
+decimalEl.addEventListener('click', function handleClick(event) {
+    event
+    i=".";
+    if (a.includes(".")) {
+        console.log(i);
+    } else {
+        pushNumber();
+        var b = a.join('');
+        b = b.replace(/^0+/, '');
+        // if (b === ".") {
+        //     b = "0.";
+        // };
+        outputEl.textContent = b;
+        console.log(a);
+        console.log(i)
+    }
+})
+
+
+
+// operator buttons
+divideEl.addEventListener('click', function handleClick(event) {
+    event
+    console.log("divide")
+})
+multiplyEl.addEventListener('click', function handleClick(event) {
+    event
+    console.log("multiply")
+})
+minusEl.addEventListener('click', function handleClick(event) {
+    event
+    console.log("minus")
+})
+plusEl.addEventListener('click', function handleClick(event) {
+    event
+    console.log("plus")
+})
+equalEl.addEventListener('click', function handleClick(event) {
+    event
+    console.log("equal")
+})
+
+//top buttons
 acEl.addEventListener('click', function handleClick(event) {
     event
-    console.log("AC")
+    a = ["0"];
+    outputEl.textContent = a
 })
 plusMinusEl.addEventListener('click', function handleClick(event) {
     event
@@ -49,68 +185,4 @@ plusMinusEl.addEventListener('click', function handleClick(event) {
 percentageEl.addEventListener('click', function handleClick(event) {
     event
     console.log("percentage")
-})
-divideEl.addEventListener('click', function handleClick(event) {
-    event
-    console.log("divide")
-})
-sevenEl.addEventListener('click', function handleClick(event) {
-    event
-    console.log("seven")
-})
-eightEl.addEventListener('click', function handleClick(event) {
-    event
-    console.log("eight")
-})
-nineEl.addEventListener('click', function handleClick(event) {
-    event
-    console.log("nine")
-})
-multiplyEl.addEventListener('click', function handleClick(event) {
-    event
-    console.log("multiply")
-})
-fourEl.addEventListener('click', function handleClick(event) {
-    event
-    console.log("four")
-})
-fiveEl.addEventListener('click', function handleClick(event) {
-    event
-    console.log("five")
-})
-sixEl.addEventListener('click', function handleClick(event) {
-    event
-    console.log("six")
-})
-minusEl.addEventListener('click', function handleClick(event) {
-    event
-    console.log("minus")
-})
-oneEl.addEventListener('click', function handleClick(event) {
-    event
-    console.log("one")
-})
-twoEl.addEventListener('click', function handleClick(event) {
-    event
-    console.log("two")
-})
-threeEl.addEventListener('click', function handleClick(event) {
-    event
-    console.log("three")
-})
-plusEl.addEventListener('click', function handleClick(event) {
-    event
-    console.log("plus")
-})
-zeroEl.addEventListener('click', function handleClick(event) {
-    event
-    console.log("zero")
-})
-decimalEl.addEventListener('click', function handleClick(event) {
-    event
-    console.log("decimal")
-})
-equalEl.addEventListener('click', function handleClick(event) {
-    event
-    console.log("equal")
 })
