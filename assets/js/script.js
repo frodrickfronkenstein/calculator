@@ -227,7 +227,7 @@ equalEl.addEventListener('click', function handleClick(event) {
     var y = b.join('');
     var z = eval(y);
     outputEl.textContent = z;
-    a = [];
+    a = ["0"];
     b = [];
 })
 
