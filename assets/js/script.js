@@ -37,14 +37,12 @@ graphicEl.addEventListener('click', function handleClick(event) {
     window.alert("not yet ready for prime time")
 })
 
-
-
 // functions
 //push number to array
 var a = [];
 var b = [];
 var pushNumber = function() {
-    if(a.length > 11) {
+    if(a.length > 10) {
         console.log("overflow")
     } else {
         a.push(i);
@@ -168,15 +166,17 @@ decimalEl.addEventListener('click', function handleClick(event) {
     }
 })
 
-
-
 // operator buttons
 divideEl.addEventListener('click', function handleClick(event) {
     event
     console.log("divide");
     var x = a.join('');
     b.push(x);
-    b.push("/");
+    if (b.includes("/") || b.includes("*") || b.includes("+") || b.includes("-")) {
+        console.log(true);
+    } else {
+        b.push("/");
+    }
     a = [];
     console.log(b);
 })
@@ -185,7 +185,11 @@ multiplyEl.addEventListener('click', function handleClick(event) {
     console.log("multiply");
     var x = a.join('');
     b.push(x);
-    b.push("*");
+    if (b.includes("/") || b.includes("*") || b.includes("+") || b.includes("-")) {
+        console.log(true);
+    } else {
+        b.push("*");
+    }
     a = [];
     console.log(b);
 })
@@ -194,7 +198,11 @@ minusEl.addEventListener('click', function handleClick(event) {
     console.log("minus");
     var x = a.join('');
     b.push(x);
-    b.push("-");
+    if (b.includes("/") || b.includes("*") || b.includes("+") || b.includes("-")) {
+        console.log(true);
+    } else {
+        b.push("-");
+    }
     a = [];
     console.log(b);
 })
@@ -203,7 +211,11 @@ plusEl.addEventListener('click', function handleClick(event) {
     console.log("plus");
     var x = a.join('');
     b.push(x);
-    b.push("+");
+    if (b.includes("/") || b.includes("*") || b.includes("+") || b.includes("-")) {
+        console.log(true);
+    } else {
+        b.push("+");
+    }
     a = [];
     console.log(b);
 })
