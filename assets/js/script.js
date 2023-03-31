@@ -10,12 +10,9 @@ var outputEl = document.querySelector("#output");
 var numPadEl = document.querySelectorAll(".zero-nine");
 var decimalEl = document.querySelector("#decimal");
 var acEl = document.querySelector("#ac");
+var operatorsEl = document.querySelectorAll(".operation");
 var plusMinusEl = document.querySelector("#plus-minus");
 var percentageEl = document.querySelector("#percentage");
-var divideEl = document.querySelector("#divide");
-var multiplyEl = document.querySelector("#multiply");
-var minusEl = document.querySelector("#minus");
-var plusEl = document.querySelector("#plus");
 var equalEl = document.querySelector("#equal");
 
 //choose calculator
@@ -29,9 +26,9 @@ graphicEl.addEventListener('click', function handleClick(event) {
 })
 
 // functions
-//push number to array
 var a = [];
 var b = [];
+//push number to "a" array
 var pushNumber = function() {
     if(a.length > 10) {
         console.log("overflow")
@@ -39,7 +36,12 @@ var pushNumber = function() {
         a.push(i);
     }
 };
-
+//push a to b array
+var pushToB = function() {
+    var x = a.join('');
+    b.push(x);
+    a = [];
+}
 //display number
 var displayNumber = function() {
     var x = a.join('');
@@ -80,51 +82,19 @@ decimalEl.addEventListener('click', function handleClick(event) {
     }
 })
 
-// operator buttons
-divideEl.addEventListener('click', function handleClick(event) {
-    event
-    var x = a.join('');
-    b.push(x);
-    if (b.includes("/") || b.includes("*") || b.includes("+") || b.includes("-")) {
-        console.log(true);
-    } else {
-        b.push("/");
-    }
-    a = [];
+// operators
+operatorsEl.forEach(operator => {
+    operator.addEventListener('click', function handleClick(event) {
+        event
+        i = operator.innerHTML;
+        pushToB();
+        if (!b.length == 0) {
+            b.push(i);
+            console.log(b);
+        }
+    })
 })
-multiplyEl.addEventListener('click', function handleClick(event) {
-    event
-    var x = a.join('');
-    b.push(x);
-    if (b.includes("/") || b.includes("*") || b.includes("+") || b.includes("-")) {
-        console.log(true);
-    } else {
-        b.push("*");
-    }
-    a = [];
-})
-minusEl.addEventListener('click', function handleClick(event) {
-    event
-    var x = a.join('');
-    b.push(x);
-    if (b.includes("/") || b.includes("*") || b.includes("+") || b.includes("-")) {
-        console.log(true);
-    } else {
-        b.push("-");
-    }
-    a = [];
-})
-plusEl.addEventListener('click', function handleClick(event) {
-    event
-    var x = a.join('');
-    b.push(x);
-    if (b.includes("/") || b.includes("*") || b.includes("+") || b.includes("-")) {
-        console.log(true);
-    } else {
-        b.push("+");
-    }
-    a = [];
-})
+
 equalEl.addEventListener('click', function handleClick(event) {
     event
     var x = a.join('');
@@ -155,8 +125,8 @@ plusMinusEl.addEventListener('click', function handleClick(event) {
 percentageEl.addEventListener('click', function handleClick(event) {
     event
     var x = a.join('');
-    a = ["0"];
     var x = x * 0.01;
-    outputEl.textContent = x;
-
+    b.push(x);
+    a = [];
+    outputEl.textContent = b;
 })
